@@ -54,7 +54,7 @@ $(OUT): $(OBJ_FILES)
 # =========================================================
 $(DEPFILE):
 	rm -f $(DEPFILE)
-	$(CC)  -E -MM $(CFLAGS) $(INCLUDES) $(CPP_FILES) $(C_FILES) -MF $(DEPFILE)
+	$(CC)  -E -MM $(CFLAGS) $(INCLUDES) $(CPP_FILES) $(CC_FILES) $(C_FILES) -MF $(DEPFILE)
 
 clean:
 	rm -f $(OUT) $(SRC)/*.o $(DEPFILE)
