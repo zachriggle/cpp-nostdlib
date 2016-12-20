@@ -4,6 +4,12 @@
 
 class A {
 public:
+	A() {
+		puts("Created an A");
+	}
+	virtual ~A() {
+		puts("Destroyed an A");
+	}
 	virtual void print(const char* message) {
 		exit(0);
 	}
@@ -11,12 +17,19 @@ public:
 
 class B : public A {
 public:
+	B() {
+		puts("Created a B");
+	}
+	~B() {
+		puts("Destroyed a B");
+	}
 	void print(const char* message) {
 		printf("%s\n", message);
 	}
 };
 
 int main() {
-	B b;
-	b.print("Hello, world");
+	A *foo = new B();
+	foo->print("Hello, world");
+	delete foo;
 }

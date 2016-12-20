@@ -20,7 +20,7 @@ void* operator new[](size_t len  ) __attribute__((alias("emulate_cc_new")));
 void  operator delete  (void* p)   __attribute__((alias("emulate_cc_delete")));
 void  operator delete[](void* p)   __attribute__((alias("emulate_cc_delete")));
 void* __cxa_pure_virtual = 0;
-
+void* __gxx_personality_v0 = 0;
 
 namespace __cxxabiv1 {
     class __class_type_info {
